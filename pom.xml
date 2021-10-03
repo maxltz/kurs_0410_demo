@@ -50,11 +50,10 @@
 
 <!-- /repository/maven-releases/ -->
     <scm>
-        <url>http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-releases/${project.artifactId}</url>
-        <connection>scm:git:http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-releases/${project.artifactId}</connection>
-        <developerConnection>scm:git:http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-releases/${project.artifactId}
-        </developerConnection>
-      <tag>test</tag>
+        <url>https://github.com/CGS-IT-Solutions/kurs_0410_demo</url>
+        <connection>scm:git:https://github.com/CGS-IT-Solutions/kurs_0410_demo</connection>
+        <developerConnection>scm:git:https://github.com/CGS-IT-Solutions/kurs_0410_demo</developerConnection>
+      <tag>1.0</tag>
   </scm>
 
 	<distributionManagement>

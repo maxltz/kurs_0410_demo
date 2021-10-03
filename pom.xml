@@ -1,11 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>at.cgsit.train</groupId>
     <artifactId>simpletest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>Simple Test</name>
@@ -27,8 +25,36 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-release-plugin</artifactId>
+			  <version>2.5.1</version>
+			   <configuration>
+				  <tagNameFormat>v@{project.version}</tagNameFormat>
+				  <autoVersionSubmodules>true</autoVersionSubmodules>
+				  <releaseProfiles>releases</releaseProfiles>
+					<checkModificationExcludes>
+						<checkModificationExclude>pom.xml</checkModificationExclude>
+					</checkModificationExcludes>				  
+			   </configuration>			  
+			  <dependencies>
+				<dependency>
+				  <groupId>org.apache.maven.shared</groupId>
+				  <artifactId>maven-invoker</artifactId>
+				  <version>2.2</version>
+				</dependency>
+			  </dependencies>
+			</plugin>			
         </plugins>
-    </build>
+    </build>	
+
+    <scm>
+        <url>http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-releases/${project.artifactId}</url>
+        <connection>scm:git:http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-releases/${project.artifactId}</connection>
+        <developerConnection>scm:git:http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-releases/${project.artifactId}
+        </developerConnection>
+      <tag>test</tag>
+  </scm>
 
 	<distributionManagement>
 	   <snapshotRepository>
@@ -36,8 +62,8 @@
 		  <url>http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-snapshots/</url>
 	   </snapshotRepository>
 	</distributionManagement>
-
-
+	
+    <dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -45,6 +71,8 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+    </dependencies>	
+    </dependencyManagement>
+
 </project>
 

@@ -30,12 +30,12 @@
         </plugins>
     </build>
 
-<distributionManagement>
-   <snapshotRepository>
-      <id>kurs_04_10</id>
-      <url>http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-snapshots/</url>
-   </snapshotRepository>
-</distributionManagement>
+	<distributionManagement>
+	   <snapshotRepository>
+		  <id>kurs_04_10</id>
+		  <url>http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-snapshots/</url>
+	   </snapshotRepository>
+	</distributionManagement>
 
 
     <dependencies>

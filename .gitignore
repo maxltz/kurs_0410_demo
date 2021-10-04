@@ -23,7 +23,7 @@
 hs_err_pid*
 
 # Ignore files created by eclipse
-# ignore additionals
+# ignore additionals 2
 *.project
 *.classpath
 **/.settings/

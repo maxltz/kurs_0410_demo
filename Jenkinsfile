@@ -12,5 +12,12 @@ pipeline {
                 }
             }
         }
+        stage('build') {
+            steps {
+                echo 'This is the build step'
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+
     }
 }

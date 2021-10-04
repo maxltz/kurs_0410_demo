@@ -25,10 +25,13 @@ class SimpleTestMainTest {
 
     @Test
     void testSimpleTestMain() {
-
         SimpleTestMain.main(null);
-
     }
 
 
+    @Test
+    void echo() {
+        String input = SimpleTestMain.echo("input");
+        assertEquals("input2", input);
+    }
 }

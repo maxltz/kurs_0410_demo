@@ -36,6 +36,6 @@ class SimpleTestMainTest {
         assertEquals("input", input);
 
         // failing test
-        //assertEquals("input2", input);
+        assertEquals("input2", input);
     }
 }

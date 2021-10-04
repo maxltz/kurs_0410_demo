@@ -24,6 +24,16 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-
+        stage('Build and Unit Test') {
+            steps {
+                echo "Build and Unit Test"
+                sh "mvn -B -nsu clean deploy"
+            }
+            post {
+                always {
+                    junit "**/surefire-reports/*.xml"
+                }
+            }
+        }
     }
 }

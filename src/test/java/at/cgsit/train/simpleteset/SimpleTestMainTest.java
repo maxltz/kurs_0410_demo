@@ -32,6 +32,10 @@ class SimpleTestMainTest {
     @Test
     void echo() {
         String input = SimpleTestMain.echo("input");
-        assertEquals("input2", input);
+        // ok
+        assertEquals("input", input);
+
+        // failing test
+        //assertEquals("input2", input);
     }
 }

@@ -1,16 +1,22 @@
 package at.cgsit.train.simpleteset;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Kommentar von chris für die Klasse
  */
 public class SimpleTestMain {
 
+    private static final Logger logger = LogManager.getLogger(SimpleTestMain.class);
+
     public static void main(String[] args) {
-        System.out.println("test");
+        logger.debug("Hello from Log4j 2 DEBUG branch feature/TICKET-25-Bugfix1");
+        logger.error("Hello form Log4J 2 - ERROR Log feature/TICKET-25-Bugfix1");
     }
 
     public static String echo(String input ) {
-        System.out.println(input);
+        logger.debug("Hello from Log4j 2");
         return input;
 
     }

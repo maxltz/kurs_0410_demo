@@ -36,4 +36,12 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            echo "Build POST  FAILURE action "
+        }
+        always {
+            echo "Build POST action"
+        }
+    }
 }

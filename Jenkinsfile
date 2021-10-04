@@ -2,6 +2,12 @@
 
 pipeline {
     agent any
+
+    tools {
+        maven 'maven_3.6.3'
+        jdk 'jdk_1.8.0'
+    }
+
     stages {
         stage('Introduction and Pre Checks') {
             steps {

@@ -20,7 +20,7 @@ class SimpleTestMainTest {
 
     @Test
     void testSingleSuccessTest() {
-        System.out.println("Success");
+        System.out.println("Success new ");
     }
 
     @Test

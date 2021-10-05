@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * tests
+ */
 class SimpleTestMainTest {
 
     private static final Logger logger = LogManager.getLogger(SimpleTestMain.class);

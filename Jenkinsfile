@@ -48,9 +48,9 @@ pipeline {
             }
         }
         stage('Build Downstream Jobs') {
-            when {
-                expression {build_downstream == true}
-             }
+            //when {
+            //    expression {build_downstream == true}
+            // }
             steps {
                 echo "build downstream jobs"
                 build job: "kurs_0410_001", wait: true

@@ -10,6 +10,9 @@ public class SimpleTestMain {
 
     private static final Logger logger = LogManager.getLogger(SimpleTestMain.class);
 
+    /**
+     *     update in feature branch 4712
+     */
     public static void main(String[] args) {
         logger.debug("Hello from Log4j 2 DEBUG branch feature/TICKET-25-Bugfix1");
         logger.error("Hello form Log4J 2 - ERROR Log feature/TICKET-25-Bugfix1");
@@ -22,3 +25,4 @@ public class SimpleTestMain {
     }
 
 }
+g

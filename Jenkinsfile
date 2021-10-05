@@ -1,7 +1,19 @@
 
 
+def test_Variable = "test"
+
 pipeline {
     agent any
+
+    parameters {
+        booleanParam(defaultValue: false,
+                     description: 'If checked downstream pipeline is also',
+                    name: 'build_downstream'
+        )
+        string(name: 'STATEMENT',
+            defaultValue: 'hello; ls /', description: 'What should I say?'
+        )
+    }
 
     tools {
         maven 'maven_3.6.3'
@@ -35,6 +47,16 @@ pipeline {
                 }
             }
         }
+        stage('Build Downstream Jobs') {
+            when {
+                expression {build_downstream == true}
+             }
+            steps {
+                echo "build downstream jobs"
+                build job: "kurs_0410_001", wait: true
+            }
+        }
+
     }
     post {
         failure {

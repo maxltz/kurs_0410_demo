@@ -43,11 +43,13 @@ pipeline {
             }
             post {
                 always {
+                  script {
                        try{
                             junit "**/failsafe-reports/*.xml"
                         }catch(Exception e) {
                             echo 'failsafe-reports not found'
                         }
+                    }
                 }
             }
         }

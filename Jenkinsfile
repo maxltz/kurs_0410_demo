@@ -43,14 +43,18 @@ pipeline {
             }
             post {
                 always {
-                    junit "**/surefire-reports/*.xml"
+                       try{
+                            junit "**/failsafe-reports/*.xml"
+                        }catch(Exception e) {
+                            echo 'failsafe-reports not found'
+                        }
                 }
             }
         }
         stage('Build Downstream Jobs') {
-            //when {
-            //    expression {build_downstream == true}
-            // }
+            when {
+                expression { params.build_downstream.toBoolean() == true}
+            }
             steps {
                 echo "build downstream jobs"
                 build job: "kurs_0410_001", wait: true

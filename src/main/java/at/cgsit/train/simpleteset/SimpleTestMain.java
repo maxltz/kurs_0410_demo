@@ -13,6 +13,7 @@ public class SimpleTestMain {
     /**
      *     update in feature branch 4712
      *     update 2
+     *     update 3
      */
     public static void main(String[] args) {
         logger.debug("Hello from Log4j 2 DEBUG branch feature/TICKET-25-Bugfix1");

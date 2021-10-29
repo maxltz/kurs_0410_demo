@@ -67,11 +67,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>kurs_04_10</id>
-            <url>http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-snapshots/</url>
+            <url>http://ec2-44-199-2-166.compute-1.amazonaws.com:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>nexus-releases</id>
-            <url>http://ec2-3-87-211-121.compute-1.amazonaws.com:8081/repository/maven-releases/</url>
+            <url>http://ec2-44-199-2-166.compute-1.amazonaws.com:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 

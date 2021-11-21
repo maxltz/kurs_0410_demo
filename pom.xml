@@ -13,7 +13,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
-        <junit.platform.version>1.8.1</junit.platform.version>      
+        <junit.platform.version>1.8.1</junit.platform.version>     
+
+        <project.nexus.snapshot-serverId>/maven-snapshots</project.nexus.snapshot-serverId>
+        <project.nexus.snapshot-repository>http://ec2-44-199-2-166.compute-1.amazonaws.com:8081/repository/
+        </project.nexus.snapshot-repository>
+        
         <version.plugin.wagon-maven-plugin>1.0</version.plugin.wagon-maven-plugin>        
     </properties>
 

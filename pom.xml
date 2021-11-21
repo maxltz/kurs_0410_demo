@@ -64,6 +64,11 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>wagon-maven-plugin</artifactId>
                     <version>${version.plugin.wagon-maven-plugin}</version>
+                        <configuration>
+                            <serverId>${project.nexus.wagon-upload-serverId}</serverId>
+                            <fromDir>target/repository</fromDir>
+                            <url>${project.nexus.wagon-upload-url}</url>
+                        </configuration>                    
                 </plugin>
             
         </plugins>

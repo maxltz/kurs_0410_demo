@@ -3,7 +3,7 @@
 def test_Variable = "test"
 
 pipeline {
-    // agent any
+    // agent any 
     agent { label 'aws' }
 
     parameters {

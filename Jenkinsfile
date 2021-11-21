@@ -4,7 +4,8 @@ def test_Variable = "test"
 
 pipeline {
     // agent any 
-    agent { label 'aws' }
+    // agent { label 'aws' }
+    agent any     
 
     parameters {
         booleanParam(defaultValue: false,

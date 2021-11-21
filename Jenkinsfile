@@ -64,7 +64,12 @@ pipeline {
                 build job: "kurs_0410_001", wait: true
             }
         }
-
+        stage('Deploy to Nexus') {
+            steps {
+            	echo "Deploy to Nexus"
+                sh 'mvn -B -N wagon:upload -Plocal-deploy -Dproject.nexus.wagon-upload-serverId=\\${project.nexus.snapshot-serverId} -Dproject.nexus.wagon-upload-url=\\${project.nexus.snapshot-repository}'
+            }
+        }
     }
     post {
         failure {

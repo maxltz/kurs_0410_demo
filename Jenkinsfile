@@ -29,6 +29,7 @@ pipeline {
                 script {
                     sh 'df -h'
                     sh 'java -version'
+                    sh 'mvn --version'
                 }
             }
         }

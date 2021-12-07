@@ -42,11 +42,11 @@ pipeline {
         stage('condstep') {
             when {
               expression {
-                 return env.build_downstream != true;
+                 params.build_downstream == true 
               }
             }
             steps {
-                echo 'This is the build step'
+                echo 'This is the build step build_downstream'
                 sh 'echo $build_downstream'
             }
         }

@@ -39,6 +39,17 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('condstep') {
+            when {
+              expression {
+                 return env.build_downstream != true;
+              }
+            }
+            steps {
+                echo 'This is the build step'
+                sh 'echo $build_downstream'
+            }
+        }
     }
     post {
         failure {

@@ -39,39 +39,6 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Build and Unit Test') {
-            steps {
-                echo "Build and Unit Test"
-                sh "mvn -B -nsu clean install"
-            }
-            post {
-                always {
-                  script {
-                       try{
-                            junit "**/failsafe-reports/*.xml"
-                        }catch(Exception e) {
-                            echo 'failsafe-reports not found'
-                        }
-                    }
-                }
-            }
-        }
-        stage('Build Downstream Jobs') {
-            when {
-                expression { params.build_downstream.toBoolean() == true}
-            }
-            steps {
-                echo "build downstream jobs"
-                build job: "kurs_0410_001", wait: true
-            }
-        }
-        stage('Deploy to Nexus') {
-            steps {
-                // -Plocal-deploy
-            	echo "Deploy to Nexus"
-                sh 'mvn -B -N wagon:upload -Dproject.nexus.wagon-upload-serverId=\\${project.nexus.snapshot-serverId} -Dproject.nexus.wagon-upload-url=\\${project.nexus.snapshot-repository}'
-            }
-        }
     }
     post {
         failure {
